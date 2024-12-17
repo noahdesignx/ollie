@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    background-image: linear-gradient(270deg, rgba(255, 0, 195, 0.304),  rgba(255, 0, 195, 0.779), rgba(255, 0, 195, 0.864)), url(images/landscape.webp);
+    min-height: 100vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    animation: cool infinite 3s linear alternate;
+}
+@keyframes cool {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(18deg);
+    }
+}
+.title h1 {
+    padding: 30px;
+    font-size: 30px;
+}
+.title a {
+    text-decoration: none;
+    background-color: white;
+    padding: 10px 20px;
+    color: rgb(255, 0, 170);
+    font-size: 15px;
+    animation: size 2s linear infinite alternate;
+}
+@keyframes size {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 1.25;
+    }
+}
+.game {
+    background-image: linear-gradient(270deg, rgba(255, 0, 195, 0.304),  rgba(255, 0, 195, 0.779), rgba(255, 0, 195, 0.864)), url(images/landscape.webp);
+    min-height: 100vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+.game h1 {
+    color: white;
+    font-family: sans-serif;
+    padding: 30px;
+    text-align: center;
+    padding-bottom: 90px;
+}
+.area {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.area div {
+    display: flex;
+}
+.area .fake {
+    width: 85px;
+    padding: 30px;
+    opacity: 0%;
+}
+.ollie {
+    width: 85px;
+    filter: brightness(150%);
+    padding: 30px;
+    position: relative;
+}
+.jump {
+    animation: jump 0.75s ease-in-out;
+}
+@keyframes jump {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: -150px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+.boba {
+    width: 85px;
+    padding: 30px;
+    animation: move 3s infinite linear;
+    position: relative;
+}
+@keyframes move {
+    0% {
+        left: 500px;
+    }
+    100% {
+        left: -500px;
+    }
+}

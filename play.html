@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Audrey Flores">
+    <meta property="og:image" content="images/metaLogo.png">
+    <meta property = "og:description" content = "Play Now!">
+    <title>Ollie's Boba</title>
+    <link rel = "stylesheet" href = "style.css">
+    <link rel = "icon" href = "images/metaLogo.png">
+    <script src="https://kit.fontawesome.com/d6414831a3.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class = "game">
+
+        <h1 id = "score">0</h1>
+
+        <div class = "area">
+            <div>
+                <img src = "images/boba.png" class = "boba" id = "boba">
+                <img src = "images/ollie.png" class = "fake">
+            </div>
+            
+            <img src = "images/ollie.png" class = "ollie" id = "ollie">
+            
+        </div>
+
+        
+
+
+
+
+    </div>
+
+    <script>
+        var ollie = document.getElementById("ollie");
+        var boba = document.getElementById("boba");
+        var score = document.getElementById("score");
+        var points = 0;
+        var test = 0;
+
+        function jump() {
+
+            if (ollie.classList != "jump") {
+                ollie.classList.add("jump");
+                test = 1;
+
+                setTimeout(function () {
+                    ollie.classList.remove("jump");
+                    test = 0;
+                }, 750);
+            }
+            
+        }
+
+        document.addEventListener("click", function (event) {
+            if (test == 0) {
+                jump();
+            }
+        });
+
+        let point = setInterval(function () {
+      
+            var ollieY = document.getElementById("ollie").offsetTop;
+            var bobaX = document.getElementById("boba").offsetLeft;
+            var ollieX = document.getElementById("ollie").offsetLeft;
+            if (ollieY < 250 && bobaX > 0 && bobaX < 50) {
+                points = points + 1;
+                score.innerHTML = points;
+                boba.style.display = "none";
+
+                setTimeout(function () {
+                    boba.style.display = "block";
+                }, 1000);
+            }
+
+
+        }, 100);
+
+    </script>
+    
+</body>
+</html>
